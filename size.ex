@@ -1,5 +1,6 @@
 defprotocol Size do
   @doc "Calculates the size (and not the length!) of a data structure"
+  @fallback_to_any true
   def size(data)
 end
 
@@ -20,5 +21,9 @@ end
 
 defimpl Size, for: MapSet do
   def size(set), do: MapSet.size(set)
+end
+
+defimpl Size, for: Any do
+  def size(_), do: 0
 end
 
