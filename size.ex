@@ -18,3 +18,7 @@ defimpl Size, for: Tuple do
   def size(tuple), do: tuple_size(tuple)
 end
 
+defimpl Size, for: MapSet do
+  def size(set), do: MapSet.size(set)
+end
+
