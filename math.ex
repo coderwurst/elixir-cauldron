@@ -1,4 +1,16 @@
 defmodule Math do
+  @moduledoc """
+  Provides math-related functions.
+
+  ## Examples
+
+      iex> Math.sum(1, 2)
+      3
+
+  """
+  @doc """
+  Calculates the sum of two numbers.
+  """
   def sum(a, b) do
     do_sum(a, b)
   end
@@ -15,6 +27,9 @@ defmodule Math do
     false
   end
 
+  @doc """
+  Calculates the sum of a list of numbers using recursion.
+  """
   def sum_list([head | tail], accumulator) do
     sum_list(tail, head + accumulator)
   end
